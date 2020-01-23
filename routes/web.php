@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TestController@welcome');
+Route::get('/create', 'TestController@create');//form
+Route::POST('/create', 'TestController@insert');//insert
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
