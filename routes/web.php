@@ -14,6 +14,8 @@
 Route::get('/', 'TestController@welcome');
 Route::get('/create', 'TestController@create');//form
 Route::POST('/create', 'TestController@insert');//insert
+Route::get('/list', 'TestController@list');//list toys
+Route::get('/descriptiontoy/{id}', 'TestController@descriptiontoy');//description toys
 
 Auth::routes();
 

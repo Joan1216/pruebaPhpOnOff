@@ -33,7 +33,6 @@ class TestController extends Controller
             'comment' => 'required|max:200'
         ];
         $this->validate($request, $rules, $messages);
-        //dd($request->name);
         $toy = new Toy();
         $toy->name = $request->input('name');
         $toy->description = $request->input('description');
@@ -42,5 +41,17 @@ class TestController extends Controller
         $toy->save();
         $notification = 'Se registró el juguete correctamente';
         return back()->with(compact('notification'));
+    }
+
+    public function list()
+    {
+        $toys = TOY::all ();
+        return view('listtoy')->with(compact('toys'));
+    }
+
+    public function descriptiontoy($id)
+    {
+        $showtoy = TOY::find($id);
+        return view('descriptiontoy')->with(compact('showtoy'));
     }
 }

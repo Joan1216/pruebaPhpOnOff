@@ -39,7 +39,7 @@
 
                 <div class="form-group">
                     <label for="">Comentarios del Juguete</label>
-                    <textarea type="text" class="form-control" placeholder="Escriba los comentarios del juguete" name="comment" value="{{ old('comment') }}"></textarea>
+                    <textarea type="text" class="form-control" placeholder="Escriba los comentarios del juguete" name="comment">{{ old('comment') }}</textarea>
                 </div>
 
                 <div class="container" align="center">
